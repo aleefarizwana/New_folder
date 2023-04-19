@@ -1,0 +1,85 @@
+palindrome
+********************
+num=int(input("enter num:")
+n1=num
+while(num>0):
+  rem=num%10
+  rev=rev*10+rem
+  num=num//10               //floor division
+if n1==rev:
+  print("palindrome)
+else:
+  print("not")
+//////////////////////
+armstrong
+********************
+num=int(input("enter num:"))
+n1=num
+n2=num
+su=0
+nof=0
+power=1
+while(n1/power>0):
+  nof=nof+1
+  power=int(power)*10
+
+while(num>0):
+  rem=num%10
+  su=su+rem**nof
+  num=num//10            
+if n2==su:
+  print("armstrong")
+else:
+  print("not")
+  
+ //////////////////////////
+1) Area of triangle,square,rectangle
+*************************************
+s=int(input("enter length of square: "))
+print("Area of square : ",s*s)
+l=int(input("enter lenth of rectangle: "))
+b=int(input("enter breadth of rectangle: "))
+print("Area of rec: ",l*b)
+ba=int(input("enter base of triangle: "))
+h=int(input("enter height of triangle: "))
+print("Area of rec: ",0.5*ba*h)
+/////////////////////////////////
+2)swap 3 numbers,arrange in ascending order without using built-In func
+***************************************************
+a=int(input("enter a value: "))
+b=int(input("enter a value: "))
+c=int(input("enter a value: "))
+if a>b and a>c:
+        if b>c:
+            max=a
+            min=c
+            m=b
+        else:
+            max=a
+            min=b
+            m=c
+elif b>a and b>c:
+        max=a
+        if a>c:
+            min=c
+            m=b
+        else:
+            min=a
+            m=c
+elif 
+    
+   
+ /////////////////////////n=int(input("enter a value: "))
+a=0
+b=1
+if(n>2):
+    print(a,end=" ")
+    print(b,end=" ")
+    for i in range(n-2):
+        c=a+b
+        print(c,end=" ")
+        a=b
+        b=c
+else:
+    print("cant print")
+    
