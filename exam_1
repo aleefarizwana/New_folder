@@ -1,9 +1,12 @@
 #week 2 assignment herovired
 #Question_1--to calculate total invoice for purchases    
-costb1=float(input("enter cost of book intro to python: "))
-costb2=float(input("enter cost of book python lib: "))
+costb1=float(input("enter cost intro to python: "))
+n1=int(input("number of books of b1 type= "))
+costb2=float(input("enter cost  of book python lib: "))
+n2=int(input("number of books of b2 type= "))
 costb3=float(input("enter cost of book ds in python: "))
-print("total invoice amount = ",costb1+costb2+costb3+0.12+250.00)
+n3=int(input("number of books of b3 type= "))
+print("total invoice amount = ",costb1*n1+costb2*n2+costb3*n3+0.12+250.00)
 
 
 #Question_2--to print unique letters in a string
