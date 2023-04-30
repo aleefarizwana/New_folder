@@ -1,0 +1,14 @@
+#week 2 assignment herovired
+#Question_1--to calculate total invoice for purchases    
+costb1=float(input("enter cost of book intro to python: "))
+costb2=float(input("enter cost of book python lib: "))
+costb3=float(input("enter cost of book ds in python: "))
+print("total invoice amount = ",costb1+costb2+costb3+0.12+250.00)
+
+
+#Question_2--to print unique letters in a string
+string1=input()
+s1=set(string1.lower())
+print("uniqueLetters = ",end=(" "))
+for i in s1:
+    print(i,end=(","))
