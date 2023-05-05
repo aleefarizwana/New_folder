@@ -1,0 +1,72 @@
+ECLIPSE -----TO DEVELOP JAVA PROGRAMMING
+
+
+import java.util.Scanner;
+public class First {
+
+	public static void main(String[] args) {
+	System.out.print("Hello...........");
+		
+	int n=10;
+	System.out.print("value of a is ="+n);
+	
+	int x;
+		First f=new First();
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter:");
+		x=sc.nextInt();
+		System.out.println("value of x"+x);
+		
+		String s;
+		System.out.print("Enter:");
+		s=sc.nextLine();
+	    System.out.println("name is : "+s);
+	   int a,b,sum=0;
+		a=sc.nextInt();
+		b=sc.nextInt();
+	    System.out.print("addition is "+(a+b));
+		
+		
+	System.out.println(2+7);
+	System.out.println(2-7);	
+	System.out.println(2%7);
+		
+		int g=5;
+	   System.out.println(a++);
+		System.out.println(++a);
+		
+		int h=2;
+		int i=5;
+		if(a>b) {
+			System.out.println("a is greater");
+		}
+		else {
+			System.out.println("b is greater");
+		}
+		
+		int d=2;
+		int e=5;
+		int f1=9;
+		if(d>e && d>f1) {
+			System.out.println("a is greater");
+	
+		}
+		else if(e>f1){
+			System.out.println("b is greater");
+		}
+		else {
+			System.out.println("f is greater");
+		}
+		
+     for(int p=0;p<5;) {
+    	 System.out.println(++i);
+     }
+     
+     int j=0;
+     while(j<5) {
+    	 j++;
+    	 System.out.println(i);
+     }
+	}
+
+}
