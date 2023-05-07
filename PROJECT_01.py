@@ -61,7 +61,7 @@ mydb.commit()
 
 #QUERIES 
 
-
+#g='delete from manufacture where defective=1 AND p.purchase_by="ORay" AND goods.manu_date= "1-04-23" AND manufacture_id= p.mi_id AND goods.item_name="shirt"'
 g='select * from manufacture, purchase p,goods where defective=1  AND p.purchase_by="ORay" AND goods.manu_date= "1-04-23" AND manufacture_id= p.mi_id AND goods.item_name="shirt"'
 cur.execute(g)
 display=cur.fetchall()
