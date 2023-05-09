@@ -1,0 +1,416 @@
+//********************BASICS OF JAVA*****************************************
+
+import java.util.Scanner;
+public class First {
+
+	public static void main(String[] args) {
+	System.out.print("Hello...........");
+		
+	int n=10;
+	System.out.print("value of a is ="+n);
+	
+	int x;
+		First f=new First();
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter:");
+		x=sc.nextInt();
+		System.out.println("value of x"+x);
+		
+		String s;
+		System.out.print("Enter:");
+		s=sc.nextLine();
+	    System.out.println("name is : "+s);
+	   int a,b,sum=0;
+		a=sc.nextInt();
+		b=sc.nextInt();
+	    System.out.print("addition is "+(a+b));
+		
+		
+	System.out.println(2+7);
+	System.out.println(2-7);	
+	System.out.println(2%7);
+		
+		int g=5;
+	   System.out.println(a++);
+		System.out.println(++a);
+		
+		int h=2;
+		int i=5;
+		if(a>b) {
+			System.out.println("a is greater");
+		}
+		else {
+			System.out.println("b is greater");
+		}
+		
+		int d=2;
+		int e=5;
+		int f1=9;
+		if(d>e && d>f1) {
+			System.out.println("a is greater");
+	
+		}
+		else if(e>f1){
+			System.out.println("b is greater");
+		}
+		else {
+			System.out.println("f is greater");
+		}
+		
+     for(int p=0;p<5;) {
+    	 System.out.println(++i);
+     }
+     
+     int j=0;
+     while(j<5) {
+    	 j++;
+    	 System.out.println(i);
+     }
+	}
+
+}
+
+
+#*************************EXCEPTION*******************************************************************************
+
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			System.out.println("Open files");
+			int n=args.length;
+			System.out.println("n= "+n);
+			int a=45/n;
+			System.out.println("a= "+a);
+			System.out.println("Hey this is running");
+		}
+		catch(ArithmeticException ae) {
+			System.out.println(ae);
+			System.out.println("Please pass data while running this program");
+		}
+		
+		finally {
+			//close the file
+			System.out.println("close the file");
+		}
+
+	}
+
+}
+
+//OUTPUT 
+//WITHOUT EXECPTION
+
+//Open files
+//n :0
+//a= 45
+//this is running.................
+//close file
+
+//OUTPUT 
+//WITH EXECPTION
+
+//Open files
+//n :0
+//java.lang.ArithmeticException: / by zero
+//Please pass data while running this program
+//close file
+
+
+public class First {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+//	 int a=10;
+	 try {
+		int n=10/0;
+			System.out.println(n); 
+		 }
+	 catch (ArithmeticException e) {
+		// TODO: handle exception
+		 e.printStackTrace();
+			System.err.println("Hey Give this a value in float if it is not showing any decimal ");
+	}
+	
+//        System.out.println(a);
+	}
+
+}
+
+
+public class Exception2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			System.out.println("Open files");
+			int n=args.length;
+			System.out.println("n :"+n);
+
+            int a=45/n;
+			System.out.println("a= "+a);
+
+			int b[]=new int[60];
+			b[50]=100;
+
+//			int b[]= {10,20,30};
+//			b[50]=100;
+//			b[2]=100;
+			
+	
+		}
+		catch(ArithmeticException ae) {
+			System.out.println(ae);
+			System.out.println("Please pass data while running this program");
+		}
+		catch(ArrayIndexOutOfBoundsException aie) {
+			aie.printStackTrace();
+			System.out.println("please check whether array index is within the range");
+		}
+		finally {
+			//close file
+			System.out.println("close file");
+		}
+	}
+}
+
+//    compile time error 
+// E:\java_exe>javac Exception2.java             (compilation only)
+// Exception2.java:6: error: ';' expected
+//                         System.out.println("Open files")
+//                                                         ^
+// 1 error
+
+
+// when argments are not given in cmd at
+// java Exception2 
+
+
+// Open files
+// n :0
+// java.lang.ArithmeticException: / by zero            (45/0)
+// Please pass data while running this program
+// close file
+
+ 
+// when argments are given in cmd at
+// java Exception2 12 34 3 5 6
+
+// E:\java_exe>java Exception2 12 3
+// Open files
+// n :2
+// a= 9
+// close file
+
+
+//int b[]= {10,20,30};
+//			b[50]=100;
+
+// E:\java_exe>javac Exception2.java
+// E:\java_exe>java Exception2 12 3 4 5
+// Open files
+// n :4
+// a= 11
+// java.lang.ArrayIndexOutOfBoundsException: Index 50 out of bounds for length 3
+
+
+#*************************ARRAY*******************************************************************************
+
+public class ArrayUse {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// int a[]= {2,3,5,6};
+		// System.out.println(a.length);
+		// System.out.println(a[0]);
+		// a[8]=345;
+
+		// 
+		
+		Scanner sc=new Scanner(system.in);
+		a[6]=15;
+		System.out.println("enter size: ");
+		int size=sc.nextInt();
+
+		int arr[]=new int[size];
+
+		for(int i=0;i<size;i++) {
+			system.out.println("enter value for i index ");
+			arr[i]=sc.nextInt();
+		}
+
+		for(int i=0;i<arr.length;i++){
+			system.out.print(arr[i]+" ");
+		}
+//       int arr[]=new int[34];
+	}
+
+}
+//no catch but exception is return by java.lang....................................
+
+//E:\java_exe>java ArrayUse
+//4
+//2
+//Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 6 out of bounds for length 4
+//      at ArrayUse.main(ArrayUse.java:9)
+
+
+
+//enter size: 
+//5
+//enter value for i index 
+//23
+//enter value for i index 
+//34
+//enter value for i index 
+//56
+//enter value for i index 
+//76
+//enter value for i index 
+//56
+//23 34 56 76 56 
+
+
+// cant declare the same array more than once
+//Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+//	Duplicate local variable arr
+//
+//	at ArrayUse.main(ArrayUse.java:26)
+
+
+
+
+//  OUTPUT  B[40]=100;...........................
+//Open files
+//n :0
+//please check whether array index is within the range
+//close file
+//java.lang.ArrayIndexOutOfBoundsException: Index 50 out of bounds for length 3
+//	at Demo2.main(Demo2.java:11)
+
+
+// no catch but exception is return by java.lang....................................
+
+// E:\java_exe>java ArrayUse
+// 4
+// 2
+// Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 6 out of bounds for length 4
+//         at ArrayUse.main(ArrayUse.java:9)
+
+//****************************FILE HANDLING IN JAVA********************************************************************
+
+import java.io.*;
+
+public class CreateFile {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+	
+//			  DataInputStream dis= new DataInputStream(System.in);
+//		  FileOutputStream fout=new FileOutputStream("E://myjava.txt");
+//	  
+//		  BufferedOutputStream bout=new BufferedOutputStream(fout,1024);
+//		  
+//		  
+		  
+//		  System.out.println("Enter the data (@ at the end): ");
+			  
+			 int ch;
+			  FileReader fr=null;
+			  try {
+				  fr=new FileReader("E://myjava.txt");
+//				  System.out.println("File is Checked");
+			  }catch(FileNotFoundException fe)
+			  {
+				  System.err.print("File is not found");
+			  }
+			  while((ch=fr.read())!=-1) {
+//				  bout.write(ch);
+				  System.out.print((char)ch);
+		  }
+			  
+			  fr.close();
+		  
+
+	}
+
+}
+
+//*********************************STREAM*************************************************************
+
+import java.io.*;
+public class stream {
+ 
+	public static void main(String[] args)throws IOException {		// TODO Auto-generated method stub
+//      DataInputStream dis=new DataInputStream(System.in);
+//      FileOutputStream fout=new FileOutputStream("E:\\java_practise\\stream.txt");
+//      System.out.println("Enter the data (@ at the end)");
+//      BufferedOutputStream bout=new BufferedOutputStream(fout,1024);
+      int ch;
+      FileReader fr=null;
+      try {
+    	  fr=new FileReader("E:\\java_practise\\stream.txt");
+      }
+      catch(FileNotFoundException fe)
+      {
+    	  System.err.print("file is not found");
+      }
+      while((ch=fr.read())!=-1) {
+        System.out.print((char)ch);
+	  }
+		fr.close();
+		}
+
+
+}
+
+
+
+class Student {
+
+	//instance variable
+	int rollno;
+	String name;
+	int age;
+	
+	
+}
+
+//****************************ACCESS MODIFIERS**********************************************************************
+//************ACCESSING DATA FROM ONE CLASS TO OTHER***********************
+
+public class StudentUse {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+//		class object created
+		Student s1=new Student();
+		
+//		assign the value to the instance variables
+		
+		s1.name="Heena";
+		s1.age=28;
+		s1.rollno=100;
+		
+		System.out.println("Student Roll no: "+s1.rollno);
+		System.out.println("Student name is: "+s1.name);
+		System.out.println("Studenet age is: "+s1.age);
+		
+		System.out.println();
+		
+		Student s2=new Student();
+		s2.name="Urvashi";
+		s2.age=21;
+		s2.rollno=102;
+		
+		System.out.println("Student Roll no: "+s2.rollno);
+		System.out.println("Student name is: "+s2.name);
+		System.out.println("Studenet age is: "+s2.age);
+		
+
+	}
+
+}
