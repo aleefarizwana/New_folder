@@ -1,0 +1,51 @@
+Question 1 - 
+Write the queries for the following tasks - 
+Create a database name - “Employee”.
+Create a table name - “Employee Details”.
+Insert 10 details in the “Employee Details” table  - 
+Emp_id
+Emp_name
+Job_name
+Manager_id
+Hire_date
+Salary
+Dep_id
+
+Sample Output - 
+
+emp_id | emp_name | job_name  | manager_id | hire_date  | salary  | dep_id
+--------+----------+-----------+------------+------------+---------+----------+---------+-----------
+68319 |   Mr. Singh  |   PRESIDENT |      68319      | 1991-11-18 | 6000 |  1001
+
+Find the salaries of all the employees from the “Employee Details” table.
+Find the unique designations of the employees from the table.
+Change the salary where the emp_name is “Raj”.
+
+
+
+Question 2 - 
+ 	Write the queries for the following tasks - 
+Create a database name - “Football”.
+Create a table name - “Football Venue”.
+Insert 10 details in the “Football Venue” table  - 
+venue_id
+venue_name
+city_id
+capacity
+Sample Output - 
+ venue_id |       venue_name        | city_id | capacity
+-------------+-----------------------------+----------+----------
+    20001 |             France               |   10003 |  42115
+
+		  4. Count the number of venues of the football world cup
+		  5. List all the venue names and capacities in the format of “Location” and “Volume”.
+
+Sample Output - 
+  Location        | Volume
+------------------+----------
+    Argentina   |   100034
+   Spain           |   272726
+
+		
+6. Delete all the details where venue_name is equal to “Australia” 
+
