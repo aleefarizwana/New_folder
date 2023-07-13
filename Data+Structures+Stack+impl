@@ -1,3 +1,16 @@
+STACK :
+it is a linear data structure,which allow to insert od delete the element from only one end of the stack called "top".
+operations:
+1)push--to insert an element
+--pass an element to push method
+--check if stack is full ==>  top==-1 then cant insert element 
+--othewise inc top and insert element.
+
+2)pop--to delete top most element
+--check if stack is empty ==> top==-1 then cant delete
+--decrement top
+
+display stack upto top...
 
 public class StackDs {
 	private static Object[] stackarray;
@@ -11,10 +24,10 @@ public class StackDs {
 	public void push(Object val) {			//arr is Object type then ele also Object type
 		if(top==size-1)
 			System.out.println("Cant enter values"); 
-		else {										                     //push --> 1)check full or not
-			stackarray[++top]=val;				                  //		  2)inc top                      must inc top then only add else Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index -1 out of bounds for length 6
-																									    //      3)add ele                                                                       //at StackDs.push(StackDs.java:15)
-	                                                                                                                          //		at StackDs.main(StackDs.java:42)
+		else {									   //push --> 1)check full or not
+			stackarray[++top]=val;				                     //		  2)inc top                      must inc top then only add else Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index -1 out of bounds for length 6
+												   //      3)add ele                                                                       //at StackDs.push(StackDs.java:15)
+	                                                                                    //		at StackDs.main(StackDs.java:42)
 			                                    	     
 			}
 	}
