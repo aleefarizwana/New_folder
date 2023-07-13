@@ -1,0 +1,130 @@
+QUEUE   ( FIFO -FIRST IN FIRST OUT )
+======
+queue implimented using array......
+A queue can be defined as an ordered list which enables insert operations to be performed at one end called REAR and delete operations to be performed at another end called FRONT.
+
+                                 	Time Complexity	                      |    Space Compleity
+                      Average	                      Worst	              |               Worst
+      Access	  Search	Insertion	 Deletion	 | Access	Search	Insertion |	Deletion	
+Queue  	θ(n)	    θ(n)	  θ(1)	    θ(1)	   |   O(n)	  O(n)	  O(1)	  |  O(1)	          O(n)
+
+Algorithm to insert any element in a queue
+==================================================
+Check if the queue is already full by comparing rear to max - 1. if so, then return an overflow error.
+
+If the item is to be inserted as the first element in the list, in that case set the value of front and rear to 0 and insert the element at the rear end.
+
+Otherwise keep increasing the value of rear and insert each element one by one having rear as the index.
+Step 1: IF REAR = MAX - 1
+Write OVERFLOW
+Go to step
+[END OF IF]
+Step 2: IF FRONT = -1 and REAR = -1
+SET FRONT = REAR = 0
+ELSE
+SET REAR = REAR + 1
+[END OF IF]
+Step 3: Set QUEUE[REAR] = NUM
+Step 4: EXIT
+
+Algorithm to delete an element from the queue
+===============================================
+If, the value of front is -1 or value of front is greater than rear , write an underflow message and exit.
+
+Otherwise, keep increasing the value of front and return the item stored at the front end of the queue at each time.
+
+Algorithm
+Step 1: IF FRONT = -1 or FRONT > REAR
+Write UNDERFLOW
+ELSE
+SET VAL = QUEUE[FRONT]
+SET FRONT = FRONT + 1
+[END OF IF]
+Step 2: EXIT
+
+
+public class QueueDs {
+	private static Object[] queuearr;
+	private int size;
+	private int rear;
+	private int front;
+	
+	public QueueDs(int size){
+		this.size=size;
+		queuearr = new Object[size];
+		this.rear=-1;
+		this.front=-1;
+	}
+	
+	public void insert(Object val) {
+		if(rear==size-1) {
+			System.out.println("cant insert queue is full");
+		}else {
+													//change(inc) and then enter
+			if(front==-1 && rear==-1) {				//*****//when stack is empty,first element insertion should set front=0 which will become first ele to delete
+				front=0;
+			}
+			
+			queuearr[++rear]=val;					//must be pre inc
+			size=size+1;
+		}
+			
+	}
+	
+	public void delete() {
+		if(front==-1 || front > rear) {				//only ele at 3rd pos -->rear=3,called delete metthod ,front deleted 3rd pos and inc to 4===>empty .... 
+			System.out.println("queue is empty");
+		}
+		else {
+			System.out.println("deleted ele is:"+queuearr[front]);   //del then(change) dec 
+			size=size-1;
+			
+			if(front == rear) {                                      //deleted all elements ==>front reached rear then again start from first
+				front=rear=-1;
+			}
+			else
+				++front;
+		
+		}
+		
+	}
+	public  void display() {                              //dont use size to display ele.....display from start to end...
+		if(rear==-1) {
+			System.out.println("empty.............");
+		}
+		else {
+		for(int i=front;i<=rear;i++) {
+			System.out.println(queuearr[i]);
+		}
+	}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		QueueDs q=new QueueDs(5);
+		q.insert(30);
+		q.insert(40);
+		q.insert(50);
+		q.insert(60);
+		q.display();
+		q.delete();
+		q.delete();
+		q.insert(70);
+		q.display();
+	}
+
+	
+
+}
+
+
+//output
+//30
+//40
+//50
+//60
+//deleted ele is:30
+//deleted ele is:40
+//50
+//60
+//70
+
