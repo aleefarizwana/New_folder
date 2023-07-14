@@ -1,0 +1,69 @@
+Implementing Queue Using Two Stacks :
+=====================================
+that meanns insertion should be at end of stack and deletion should occur at start of stack
+so insert at end is same as insert at top in stack
+need to change a stack to perform like queue deletion at front end
+
+import java.util.Stack;
+
+public class QueueUsingTwoStacks<T>{
+	private Stack<T>insertionStack;
+	private Stack<T>deletionStack;
+	public QueueUsingTwoStacks() {
+		insertionStack = new Stack<>();  //add <> to avoid error
+		deletionStack = new Stack<>();  //Type safety: The expression of type Stack needs unchecked conversion to conform to Stack<T>
+	}
+	public void enqueue(T item) {
+		insertionStack.push(item);
+		
+	}
+	public T dequeue() {
+		if(deletionStack.isEmpty()) {
+			while(!insertionStack.isEmpty()) {
+				deletionStack.push(insertionStack.pop());
+			}
+		}
+	return deletionStack.pop();
+	}
+	public T peek() {
+		if(deletionStack.isEmpty()) {
+			while(insertionStack.isEmpty()) {
+				deletionStack.push(insertionStack.pop());
+			}
+		}
+		return deletionStack.peek();    
+		
+//		T java.util.Stack.peek()
+//
+//
+//		Looks at the object at the top of this stack without removing itfrom the stack.
+//		Returns:the object at the top of this stack (the last itemof the Vector object).Throws:EmptyStackException - if this stack is empty.
+//		
+		}
+//	public void display() {
+//		
+//	}
+	
+	public static void main(String[]args) {
+		QueueUsingTwoStacks qs = new QueueUsingTwoStacks<>();
+		qs.enqueue(10);
+		qs.enqueue(20);
+		qs.enqueue(30);
+		qs.enqueue(40);
+		System.out.println(qs.dequeue());
+		qs.enqueue(50);
+        System.out.println(qs.dequeue());
+	}
+}
+
+
+
+//java.util.Stack<T>
+
+
+//The Stack class represents a last-in-first-out(LIFO) stack of objects.
+//It extends class Vector with fiveoperations that allow a vector to be treated as a stack. 
+//The usual push and pop operations are provided, as well as amethod to peek at the top item on the stack, a method to testfor whether the stack is empty, and a method to searchthe stack for an item and discover how far it is from the top. 
+//When a stack is first created, it contains no items. 
+//A more complete and consistent set of LIFO stack operations isprovided by the Deque interface and its implementations, whichshould be used in preference to this class. For example: 
+
