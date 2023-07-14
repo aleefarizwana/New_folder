@@ -1,0 +1,52 @@
+BINARY SEARCH
+=============
+algorithm:
+Compare the middle element of the search space with the key. 
+If the key is found at middle element, the process is terminated.
+If the key is not found at middle element, choose which half will be used as the next search space.
+If the key is smaller than the middle element, then the left side is used for next search.
+If the key is larger than the middle element, then the right side is used for next search.
+This process is continued until the key is found or the total search space is exhausted.
+
+
+public class BinarySearch {
+	public static void binary(int arr[],int search) {
+		int start=0;
+		int end=arr.length-1;
+		int mid;
+		int val=0;
+		while(start<=end) {
+			mid=(start+end)/2;
+		if(search==arr[mid]) {
+			val=-1;
+			System.out.println("value is at:"+mid);
+			break;
+		}
+		if(search<arr[mid]) {
+		                         ////////////////////////////////no need of start=0;
+			end=mid-1;
+		}
+		else if(search>arr[mid]) {
+			start=mid+1;
+		                           //////////////////////////////no need end=length;
+		}
+		}
+		if(val==0)
+			System.out.println("value is not present");
+	
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]= {6,5,13,32,40,45};
+		int search=40;
+		
+		binary(arr,search);
+	}
+
+}
+
+//output:
+
+value is at: 4
+
+time complexicity : O(logn)
